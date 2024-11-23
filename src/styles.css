@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --zinc-bg-color: #09090B;
+  --zinc-secundary-color: #18181B;
+  --zinc-main-text-color: #F4F4F5;
+  --zinc-secundary-text-color: #A1A1AA;
+  --purple-primary-color: #9864F2;
+  --purple-secundary-color: #7E3AF2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: #ffffff;
+  background-color: var(--zinc-bg-color);
+  font-family: 'Inter', sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+}

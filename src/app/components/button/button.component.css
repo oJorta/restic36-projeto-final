@@ -1,0 +1,17 @@
+.search-bar-button {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--purple-primary-color);
+  border-radius: 8px;
+  padding: 8px 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar-button:disabled {
+  cursor: not-allowed;
+}
