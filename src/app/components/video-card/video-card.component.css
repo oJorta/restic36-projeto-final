@@ -48,7 +48,6 @@
 
 .md {
   flex-direction: column;
-  max-width: 300px;
 }
 
 .md .video-thumbnail img {

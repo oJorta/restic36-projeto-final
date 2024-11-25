@@ -1,12 +1,13 @@
 <form
-  action=""
   class="search-bar"
+  (submit)="searchVideo($event)"
 >
   <input
     type="text"
     name="video-title"
     id="video-title"
     placeholder="Buscar vídeo"
+    [formControl]="queryControl"
   >
   <app-button
     label="Buscar"
