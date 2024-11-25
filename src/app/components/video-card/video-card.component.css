@@ -1,0 +1,79 @@
+.video-card-container {
+  display: flex;
+  width: max-content;
+}
+
+.video-card-container:hover {
+  cursor: pointer;
+}
+
+.video-thumbnail img {
+  object-fit: cover;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.video-thumbnail img:hover {
+  opacity: 0.8;
+}
+
+.lg {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lg .video-thumbnail img {
+  max-width: 300px;
+  height: auto;
+}
+
+.lg .video-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lg .video-info .video-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--zinc-main-text-color);
+}
+
+.lg .video-info p {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--zinc-secundary-text-color);
+}
+
+.md {
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.md .video-thumbnail img {
+  max-width: 350px;
+  height: auto;
+}
+
+.md .video-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.md .video-info .video-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--zinc-main-text-color);
+}
+
+.md .video-info p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--zinc-secundary-text-color);
+}
+
+.sm {
+
+}

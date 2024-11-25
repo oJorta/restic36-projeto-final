@@ -7,3 +7,7 @@
   gap: 1rem;
   padding: 1rem;
 }
+
+.content main {
+  padding: 1rem 0;
+}

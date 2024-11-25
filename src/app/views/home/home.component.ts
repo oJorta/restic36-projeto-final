@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VideoCardComponent } from "../../components/video-card/video-card.component";
+import { VideoCardComponent } from '../../components/video-card/video-card.component';
 
 @Component({
   selector: 'app-home',

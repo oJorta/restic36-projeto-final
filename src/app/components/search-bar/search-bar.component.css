@@ -1,6 +1,7 @@
 :host {
   width: 100%;
   max-width: 720px;
+  padding: 0 1rem;
 }
 
 .search-bar {
