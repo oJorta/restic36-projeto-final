@@ -74,5 +74,31 @@
 }
 
 .sm {
+  width: 100%;
+  max-width: 350px;
+  flex-direction: row;
+  gap: 10px;
+}
 
+.sm .video-thumbnail img {
+  max-width: 200px;
+  height: auto;
+}
+
+.sm .video-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sm .video-info .video-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--zinc-main-text-color);
+}
+
+.sm .video-info p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--zinc-secundary-text-color);
 }

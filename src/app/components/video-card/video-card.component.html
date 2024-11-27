@@ -1,6 +1,7 @@
-<div
+<a
   [ngClass]="size"
   class="video-card-container"
+  [routerLink]="['/watch-video', id]"
 >
   <div class="video-thumbnail">
     <img src="../../../assets/images/placeholder-image.png" alt="">
@@ -10,4 +11,4 @@
     <p class="video-views">{{ views }} visualizações</p>
     <p class="video-description">{{ description }}</p>
   </div>
-</div>
+</a>
