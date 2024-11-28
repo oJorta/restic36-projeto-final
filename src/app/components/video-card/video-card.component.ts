@@ -14,5 +14,8 @@ export class VideoCardComponent {
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() title: string = 'Título do vídeo';
   @Input() description: string = 'Descrição do vídeo';
+  @Input() url!: string;
+  @Input() thumbnail!: string;
   @Input() views: number = 0;
+  @Input() uploadedAt!: string;
 }

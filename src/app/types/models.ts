@@ -1,5 +1,5 @@
 export interface User {
-  id: number;
+  id: string;
   name: string;
   email: string;
   socialLinkProvider: string;
@@ -13,4 +13,11 @@ export interface Video {
   thumbnail: string;
   views: number;
   uploadedAt: string;
+}
+
+export interface VideoInteraction {
+  id: string;
+  userId: string;
+  videoId: number;
+  video?: Video;
 }

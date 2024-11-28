@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User, Video } from '../../types/models';
+import { VideoInteraction, User, Video } from '../../types/models';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUserById(id: number) {
-    return this.http.get<User>(`${this.apiUrl}/users/${id}`);
+  getUserById(id: string) {
+    return this.http.get<User[]>(`${this.apiUrl}/users?id=${id}`);
   }
 
   getUserByEmail(email: string) {
@@ -22,28 +22,28 @@ export class UserService {
     return this.http.post<User>(`${this.apiUrl}/users`, user);
   }
 
-  getFavorites(userId: number) {
-    return this.http.get<Video[]>(`${this.apiUrl}/favorites?userId=${userId}`);
+  getFavorites(userId: string) {
+    return this.http.get<VideoInteraction[]>(`${this.apiUrl}/favorites?userId=${userId}&_embed=video`);
   }
 
-  addFavorite(userId: number, videoId: number) {
+  addFavorite(userId: string, videoId: number) {
     return this.http.post<void>(`${this.apiUrl}/favorites`, { userId, videoId });
   }
 
-  removeFavorite(userId: number, videoId: number) {
+  removeFavorite(userId: string, videoId: number) {
     const url = `${this.apiUrl}/favorites?userId=${userId}&videoId=${videoId}`;
     return this.http.delete<void>(url);
   }
 
-  getWatchLater(userId: number) {
-    return this.http.get<Video[]>(`${this.apiUrl}/watchLater?userId=${userId}`);
+  getWatchLater(userId: string) {
+    return this.http.get<VideoInteraction[]>(`${this.apiUrl}/watchLater?userId=${userId}&_embed=video`);
   }
 
-  addToWatchLater(userId: number, videoId: number) {
+  addToWatchLater(userId: string, videoId: number) {
     return this.http.post<void>(`${this.apiUrl}/watchLater`, { userId, videoId });
   }
 
-  removeFromWatchLater(userId: number, videoId: number) {
+  removeFromWatchLater(userId: string, videoId: number) {
     const url = `${this.apiUrl}/watchLater?userId=${userId}&videoId=${videoId}`;
     return this.http.delete<void>(url);
   }

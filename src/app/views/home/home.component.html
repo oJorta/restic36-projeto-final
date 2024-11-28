@@ -2,17 +2,41 @@
   <h1 class="greeting">Bem vindo, <span class="username">Usuário</span>!</h1>
 
   <div class="category-selector-container">
-    <a class="category-option selected" href="">Vídeo populares</a>
-    <a class="category-option" href="">Vídeos favoritos</a>
-    <a class="category-option" href="">Assistir mais tarde</a>
+    <a
+      class="category-option"
+      [class.selected]="selectedCategory === 'default'"
+      (click)="selectCategory('default')"
+    >
+      Vídeo populares
+    </a>
+    <a
+      class="category-option"
+      [class.selected]="selectedCategory === 'favoritos'"
+      (click)="selectCategory('favoritos')"
+    >
+      Vídeo favoritos
+    </a>
+    <a
+      class="category-option"
+      [class.selected]="selectedCategory === 'assistir-depois'"
+      (click)="selectCategory('assistir-depois')"
+    >
+      Assistir mais tarde
+    </a>
   </div>
 
   <div class="videos-container">
-    <app-video-card [id]=1></app-video-card>
-    <app-video-card [id]=2></app-video-card>
-    <app-video-card [id]=1></app-video-card>
-    <app-video-card [id]=1></app-video-card>
-    <app-video-card [id]=1></app-video-card>
-    <app-video-card [id]=1></app-video-card>
+    @for (video of filteredVideos; track video.id) {
+      <app-video-card
+        [id]="video.id"
+        [title]="video.title"
+        [description]="video.description"
+        [url]="video.url"
+        [thumbnail]="video.thumbnail"
+        [views]="video.views"
+        [uploadedAt]="video.uploadedAt"
+      >
+      </app-video-card>
+    }
   </div>
 </div>

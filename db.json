@@ -13,10 +13,16 @@
       "socialLoginProvider": "Facebook"
     },
     {
-      "id": "9416",
+      "id": "google-oauth2|116448144598351732140",
       "name": "João Pedro Correia da Silva Noberto",
       "email": "jpcsnoberto@gmail.com",
       "socialLoginProvider": "google-oauth2"
+    },
+    {
+      "id": "facebook|2386516505025581",
+      "name": "João",
+      "email": "",
+      "socialLoginProvider": "facebook"
     }
   ],
   "videos": [
@@ -246,6 +252,11 @@
       "userId": 2,
       "videoId": 1,
       "id": "4755"
+    },
+    {
+      "userId": "google-oauth2|116448144598351732140",
+      "videoId": "1",
+      "id": "4755"
     }
   ],
   "favorites": [
@@ -263,6 +274,11 @@
       "userId": 2,
       "videoId": 2,
       "id": "4d96"
+    },
+    {
+      "userId": "google-oauth2|116448144598351732140",
+      "videoId": "22",
+      "id": "4755"
     }
   ]
 }

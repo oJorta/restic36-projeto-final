@@ -1,6 +1,5 @@
 .video-card-container {
   display: flex;
-  width: max-content;
 }
 
 .video-card-container:hover {
@@ -16,6 +15,7 @@
 .video-thumbnail img:hover {
   opacity: 0.8;
 }
+
 
 .lg {
   flex-direction: row;
@@ -48,6 +48,11 @@
 
 .md {
   flex-direction: column;
+}
+
+.md.video-card-container {
+  max-width: 350px;
+  height: auto;
 }
 
 .md .video-thumbnail img {
