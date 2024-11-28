@@ -9,14 +9,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './video-card.component.html',
   styleUrl: './video-card.component.css'
 })
-export class VideoCardComponent implements OnInit{
+export class VideoCardComponent {
   @Input() id!: number;
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() title: string = 'Título do vídeo';
   @Input() description: string = 'Descrição do vídeo';
   @Input() views: number = 0;
-
-  ngOnInit() {
-    console.log(this.id);
-  }
 }
