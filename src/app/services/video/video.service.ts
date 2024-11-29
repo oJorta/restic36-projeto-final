@@ -11,23 +11,27 @@ export class VideoService {
 
   constructor(private http: HttpClient) { }
 
-  getVideoById(id: string) {
-    return this.http.get<Video>(`${this.videosApiUrl}/${id}`);
+  getVideoById(videoId: number) {
+    return this.http.get<Video>(`${this.videosApiUrl}/${videoId}`);
   }
 
   getVideos() {
     return this.http.get<Video[]>(this.videosApiUrl);
   }
 
-  getLikesByVideoId(videoId: string) {
+  getLikesByVideoId(videoId: number) {
     return this.http.get<VideoInteraction[]>(`${this.likesApiUrl}?videoId=${videoId}`);
   }
 
-  addLike(videoId: string, userId: string) {
+  addLike(videoId: number, userId: string) {
     return this.http.post<VideoInteraction>(`${this.likesApiUrl}`, { videoId, userId });
   }
 
-  incrementViews(videoId: string, currentViews: number) {
+  removeLike(likeId: string) {
+    return this.http.delete(`${this.likesApiUrl}/${likeId}`);
+  }
+
+  incrementViews(videoId: number, currentViews: number) {
     return this.http.patch(`${this.videosApiUrl}/${videoId}`, { views: currentViews + 1 });
   }
 }

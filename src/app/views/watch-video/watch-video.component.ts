@@ -3,8 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { VideoService } from '../../services/video/video.service';
+import { AuthService } from '../../services/auth/auth.service';
 
-import { Video } from '../../types/models';
+import { Video, VideoInteraction } from '../../types/models';
 
 import { VideoCardComponent } from "../../components/video-card/video-card.component";
 
@@ -23,6 +24,7 @@ export class WatchVideoComponent {
 
   constructor(
     private videoService: VideoService,
+    private authService: AuthService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer
   ) {}
@@ -34,7 +36,7 @@ export class WatchVideoComponent {
     });
   }
 
-  loadVideo(videoId: string) {
+  loadVideo(videoId: number) {
     this.videoService.getVideoById(videoId).subscribe(video => {
       this.currentVideo = video
       const url = this.currentVideo.url.replace('watch?v=', 'embed/');
@@ -58,5 +60,27 @@ export class WatchVideoComponent {
       [videos[i], videos[j]] = [videos[j], videos[i]];
     }
     return videos
+  }
+
+  toggleVideoLike() {
+    this.authService.getUser().subscribe(user => {
+      if (user) {
+        this.videoService.getLikesByVideoId(this.currentVideo.id).subscribe(likes => {
+          const isLiked: VideoInteraction | undefined = likes.find(like => like.userId === user.sub);
+
+          if (!isLiked) {
+            if (user.sub) {
+              this.videoService.addLike(this.currentVideo.id, user.sub).subscribe(() => {
+                this.likes++;
+              });
+            }
+          } else {
+            this.videoService.removeLike(isLiked.id).subscribe(() => {
+              this.likes--;
+            });
+          }
+        });
+      }
+    })
   }
 }

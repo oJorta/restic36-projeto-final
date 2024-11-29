@@ -86,7 +86,7 @@
       "description": "Videoclipe oficial de 'Let It Be' dos The Beatles.",
       "url": "https://www.youtube.com/watch?v=QDYfEBY9NM4",
       "thumbnail": "https://i.ytimg.com/vi/QDYfEBY9NM4/hqdefault.jpg",
-      "views": 300000000,
+      "views": 300000001,
       "uploadedAt": "2018-05-23T12:00:00Z"
     },
     {
@@ -113,7 +113,7 @@
       "description": "Videoclipe oficial de 'Sweet Child O' Mine' dos Guns N' Roses.",
       "url": "https://www.youtube.com/watch?v=1w7OgIMMRc4",
       "thumbnail": "https://i.ytimg.com/vi/1w7OgIMMRc4/hqdefault.jpg",
-      "views": 1200000000,
+      "views": 1200000013,
       "uploadedAt": "2009-10-25T12:00:00Z"
     },
     {
@@ -250,6 +250,16 @@
       "userId": "google-oauth2|116448144598351732140",
       "videoId": "7",
       "id": "db94"
+    },
+    {
+      "id": "9284",
+      "videoId": "11",
+      "userId": "google-oauth2|116448144598351732140"
+    },
+    {
+      "id": "62f2",
+      "videoId": "8",
+      "userId": "google-oauth2|116448144598351732140"
     }
   ],
   "watchLater": [
@@ -261,11 +271,6 @@
     {
       "userId": 2,
       "videoId": 1,
-      "id": "4755"
-    },
-    {
-      "userId": "google-oauth2|116448144598351732140",
-      "videoId": "1",
       "id": "4755"
     }
   ],
@@ -284,11 +289,6 @@
       "userId": 2,
       "videoId": 2,
       "id": "4d96"
-    },
-    {
-      "userId": "google-oauth2|116448144598351732140",
-      "videoId": "22",
-      "id": "4755"
     }
   ]
 }

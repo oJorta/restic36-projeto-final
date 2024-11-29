@@ -13,7 +13,10 @@
         </div>
 
         <div class="options-container">
-          <p class="option">
+          <p
+            class="option"
+            (click)="toggleVideoLike()"
+          >
             <img src="../../../assets/icons/not-liked.svg" alt="">
             {{ likes }}
           </p>
