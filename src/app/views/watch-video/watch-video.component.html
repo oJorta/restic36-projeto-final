@@ -40,14 +40,19 @@
   <aside>
     <h3>Mais vídeos</h3>
     <div class="more-videos-container">
-      <app-video-card [id]="5" size="sm"></app-video-card>
-      <app-video-card [id]="5" size="sm"></app-video-card>
-      <app-video-card [id]="5" size="sm"></app-video-card>
-      <app-video-card [id]="5" size="sm"></app-video-card>
-      <app-video-card [id]="5" size="sm"></app-video-card>
-      <app-video-card [id]="5" size="sm"></app-video-card>
-      <app-video-card [id]="5" size="sm"></app-video-card>
-      <app-video-card [id]="5" size="sm"></app-video-card>
+      @for (video of videos; track video.id) {
+        <app-video-card
+          size="sm"
+          [id]="video.id"
+          [title]="video.title"
+          [description]="video.description"
+          [url]="video.url"
+          [thumbnail]="video.thumbnail"
+          [views]="video.views"
+          [uploadedAt]="video.uploadedAt"
+        >
+        </app-video-card>
+      }
     </div>
   </aside>
 </div>
