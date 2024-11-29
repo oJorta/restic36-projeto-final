@@ -35,7 +35,7 @@ export class HomeComponent {
 
   loadVideos() {
     return this.videoService.getVideos().subscribe(videos => {
-      this.videos = videos;
+      this.videos = this.shuffleVideos(videos);
       this.filteredVideos = videos;
     });
   }
@@ -58,6 +58,14 @@ export class HomeComponent {
         }
       })
     }
+  }
+
+  shuffleVideos(videos: Video[]) {
+    for (let i = videos.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [videos[i], videos[j]] = [videos[j], videos[i]];
+    }
+    return videos
   }
 
 }

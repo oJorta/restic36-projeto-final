@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -18,4 +19,6 @@ export class VideoCardComponent {
   @Input() thumbnail!: string;
   @Input() views: number = 0;
   @Input() uploadedAt!: string;
+
+  constructor(private router: Router) {}
 }
