@@ -50,7 +50,7 @@
       "description": "The official music video for Smash Mouth's hit song 'All Star'.",
       "url": "https://www.youtube.com/watch?v=L_jWHffIx5E",
       "thumbnail": "https://i.ytimg.com/vi/L_jWHffIx5E/hqdefault.jpg",
-      "views": 300000007,
+      "views": 300000010,
       "uploadedAt": "2009-06-16T00:00:00Z"
     },
     {
@@ -59,7 +59,7 @@
       "description": "Videoclipe oficial de 'Hear Me Now' por Alok, Zeeba e Bruno Martini.",
       "url": "https://www.youtube.com/watch?v=JVpTp8IHdEg",
       "thumbnail": "https://i.ytimg.com/vi/JVpTp8IHdEg/hqdefault.jpg",
-      "views": 400000002,
+      "views": 400000003,
       "uploadedAt": "2016-11-03T12:00:00Z"
     },
     {
@@ -95,7 +95,7 @@
       "description": "Videoclipe oficial de 'Bohemian Rhapsody' de Queen.",
       "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
       "thumbnail": "https://i.ytimg.com/vi/fJ9rUzIMcZQ/hqdefault.jpg",
-      "views": 1500000000,
+      "views": 1500000001,
       "uploadedAt": "2008-08-01T00:00:00Z"
     },
     {
@@ -104,7 +104,7 @@
       "description": "Videoclipe oficial de 'Smells Like Teen Spirit' do Nirvana.",
       "url": "https://www.youtube.com/watch?v=hTWKbfoikeg",
       "thumbnail": "https://i.ytimg.com/vi/hTWKbfoikeg/hqdefault.jpg",
-      "views": 1400000001,
+      "views": 1400000002,
       "uploadedAt": "2009-06-16T12:00:00Z"
     },
     {
@@ -176,7 +176,7 @@
       "description": "Videoclipe oficial de 'With Or Without You' do U2.",
       "url": "https://www.youtube.com/watch?v=ujNeHIo7oTE",
       "thumbnail": "https://i.ytimg.com/vi/ujNeHIo7oTE/hqdefault.jpg",
-      "views": 400000006,
+      "views": 400000007,
       "uploadedAt": "2009-06-16T12:00:00Z"
     },
     {
@@ -203,7 +203,7 @@
       "description": "Videoclipe oficial de 'Livin' On A Prayer' do Bon Jovi.",
       "url": "https://www.youtube.com/watch?v=lDK9QqIzhwk",
       "thumbnail": "https://i.ytimg.com/vi/lDK9QqIzhwk/hqdefault.jpg",
-      "views": 900000000,
+      "views": 900000001,
       "uploadedAt": "2009-06-16T12:00:00Z"
     },
     {
@@ -212,7 +212,7 @@
       "description": "Aprenda tudo sobre Angular, desde os conceitos básicos até técnicas avançadas, neste curso completo de desenvolvimento web.",
       "url": "https://www.youtube.com/watch?v=3qBXWUpoPHo",
       "thumbnail": "https://img.youtube.com/vi/3qBXWUpoPHo/hqdefault.jpg",
-      "views": 900000011,
+      "views": 900000012,
       "uploadedAt": "2009-06-16T12:00:00Z"
     },
     {
@@ -221,7 +221,7 @@
       "description": "Descubra como criar interfaces modernas e funcionais utilizando o Figma, uma das ferramentas mais populares entre designers.",
       "url": "https://www.youtube.com/watch?v=FTFaQWZBqQ8",
       "thumbnail": "https://img.youtube.com/vi/FTFaQWZBqQ8/hqdefault.jpg",
-      "views": 900000005,
+      "views": 900000006,
       "uploadedAt": "2009-06-16T12:00:00Z"
     },
     {
@@ -378,11 +378,6 @@
       "id": "0a3c",
       "videoId": "20",
       "userId": "google-oauth2|116448144598351732140"
-    },
-    {
-      "videoId": "3",
-      "userId": "google-oauth2|116448144598351732140",
-      "id": "sg8YBKU"
     }
   ]
 }

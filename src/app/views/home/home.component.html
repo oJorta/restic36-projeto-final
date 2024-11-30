@@ -25,6 +25,44 @@
     </a>
   </div>
 
+  <div class="filter-options-container">
+    <p class="filter">
+      <img src="../../../assets/icons/filter.svg" alt="">
+      Filtrar:
+    </p>
+
+    <app-button
+      (click)="toggleSort('views')"
+    >
+      @if (sortBy === 'views' && sortOrder === 'asc') {
+        <img src="../../../assets/icons/sort-asc.svg" alt="">
+      } @else if (sortBy === 'views' && sortOrder === 'desc') {
+        <img src="../../../assets/icons/sort-desc.svg" alt="">
+      }
+      Visualizações
+    </app-button>
+    <app-button
+      (click)="toggleSort('date')"
+    >
+      @if (sortBy === 'date' && sortOrder === 'asc') {
+        <img src="../../../assets/icons/sort-asc.svg" alt="">
+      } @else if (sortBy === 'date' && sortOrder === 'desc') {
+        <img src="../../../assets/icons/sort-desc.svg" alt="">
+      }
+      Data
+    </app-button>
+    <app-button
+      (click)="toggleSort('title')"
+    >
+      @if (sortBy === 'title' && sortOrder === 'asc') {
+        <img src="../../../assets/icons/sort-asc.svg" alt="">
+      } @else if (sortBy === 'title' && sortOrder === 'desc') {
+        <img src="../../../assets/icons/sort-desc.svg" alt="">
+      }
+      Título
+    </app-button>
+  </div>
+
   <div class="videos-container">
     @if (filteredVideos.length === 0) {
       <p class="no-videos-message">Nenhum vídeo encontrado.</p>

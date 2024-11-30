@@ -11,6 +11,19 @@
   color: var(--purple-secundary-color);
 }
 
+.filter {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+}
+
+.filter-options-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
 .category-selector-container {
   padding-top: 1rem;
   display: flex;

@@ -16,7 +16,14 @@
 .filter {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: .2rem;
+}
+
+.filter-options-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
 }
 
 .videos-container {

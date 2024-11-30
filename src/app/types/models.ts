@@ -21,3 +21,8 @@ export interface VideoInteraction {
   videoId: number;
   video?: Video;
 }
+
+export type SortByField = 'views' | 'date' | 'title';
+
+export type SortOrder = 'asc' | 'desc';
+

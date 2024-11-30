@@ -26,5 +26,7 @@ button:hover {
 }
 
 .default {
-
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--zinc-main-text-color);
 }
