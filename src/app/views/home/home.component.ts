@@ -48,7 +48,7 @@ export class HomeComponent {
     } else if (category === 'favoritos') {
       this.userService.getFavorites(this.userId).subscribe(favorites => {
         if (favorites.length > 0) {
-          this.filteredVideos = favorites.map(fv => fv.video).filter((video) => video !== undefined) || [];
+          this.filteredVideos = this.videos.filter(video => favorites.some(fav => fav.videoId === video.id));
         } else {
           this.filteredVideos = [];
         }
@@ -56,7 +56,7 @@ export class HomeComponent {
     } else if (category === 'assistir-depois') {
       this.userService.getWatchLater(this.userId).subscribe(watchLater => {
         if (watchLater.length > 0) {
-          this.filteredVideos = watchLater.map(wl => wl.video).filter((video) => video !== undefined) || [];
+          this.filteredVideos = this.videos.filter(video => watchLater.some(wl => wl.videoId === video.id));
         } else {
           this.filteredVideos = [];
         }

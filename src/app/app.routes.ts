@@ -5,7 +5,7 @@ import { WatchVideoComponent } from './views/watch-video/watch-video.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'search-video/:query', component: SearchVideoComponent },
+  { path: 'search-video', component: SearchVideoComponent },
   { path: 'watch-video/:id', component: WatchVideoComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

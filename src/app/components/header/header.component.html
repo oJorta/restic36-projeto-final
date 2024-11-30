@@ -1,8 +1,10 @@
-<a [routerLink]="['/home']">
-  <img src="../../../assets/icons/logo.svg" alt="Logo do Restic36 Vídeos">
-</a>
+<div class="header-main-content">
+  <a [routerLink]="['/home']">
+    <img src="../../../assets/icons/logo.svg" alt="Logo do Restic36 Vídeos">
+  </a>
 
-<app-search-bar></app-search-bar>
+  <app-search-bar></app-search-bar>
+</div>
 
 @if (isAuthenticated) {
   @if (profile) {

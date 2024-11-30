@@ -18,7 +18,7 @@ export class SearchBarComponent {
   searchVideo(event: Event) {
     event.preventDefault();
     if (this.queryControl.value) {
-      this.router.navigate([`/search-video/${this.queryControl.value}`]);
+      this.router.navigate(['/search-video'], { queryParams: { q: this.queryControl.value } });
       this.queryControl.reset();
     }
   }

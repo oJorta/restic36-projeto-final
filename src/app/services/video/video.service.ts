@@ -25,4 +25,8 @@ export class VideoService {
   incrementViews(videoId: number, currentViews: number) {
     return this.http.patch(`${this.apiUrl}/videos/${videoId}`, { views: currentViews + 1 });
   }
+
+  searchVideos(query: string) {
+    return this.http.get<Video[]>(`${this.apiUrl}/videos?q=${query}`);
+  }
 }

@@ -4,6 +4,14 @@
   align-items: center;
 }
 
+.header-main-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
 .logged-user-container {
   display: flex;
   align-items: center;
@@ -46,4 +54,12 @@
 .profile-info p:last-child {
   font-size: 0.8rem;
   color: var(--zinc-secundary-text-color);
+}
+
+@media screen and (max-width: 650px) {
+  :host {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
 }

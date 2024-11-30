@@ -32,7 +32,7 @@
       "description": "The official video for “Never Gonna Give You Up” by Rick Astley",
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
-      "views": 1200000001,
+      "views": 1200000002,
       "uploadedAt": "2009-10-25T07:57:33Z"
     },
     {
@@ -50,7 +50,7 @@
       "description": "The official music video for Smash Mouth's hit song 'All Star'.",
       "url": "https://www.youtube.com/watch?v=L_jWHffIx5E",
       "thumbnail": "https://i.ytimg.com/vi/L_jWHffIx5E/hqdefault.jpg",
-      "views": 300000003,
+      "views": 300000007,
       "uploadedAt": "2009-06-16T00:00:00Z"
     },
     {
@@ -194,7 +194,7 @@
       "description": "Áudio oficial de 'Dream On' do Aerosmith.",
       "url": "https://www.youtube.com/watch?v=89dGC8de0CA",
       "thumbnail": "https://i.ytimg.com/vi/89dGC8de0CA/hqdefault.jpg",
-      "views": 200000057,
+      "views": 200000065,
       "uploadedAt": "2013-10-10T12:00:00Z"
     },
     {
@@ -221,7 +221,7 @@
       "description": "Descubra como criar interfaces modernas e funcionais utilizando o Figma, uma das ferramentas mais populares entre designers.",
       "url": "https://www.youtube.com/watch?v=FTFaQWZBqQ8",
       "thumbnail": "https://img.youtube.com/vi/FTFaQWZBqQ8/hqdefault.jpg",
-      "views": 900000004,
+      "views": 900000005,
       "uploadedAt": "2009-06-16T12:00:00Z"
     },
     {
@@ -230,7 +230,7 @@
       "description": "sympton of life music video by willow smith.",
       "url": "https://www.youtube.com/watch?v=wQtVSNmYCNg",
       "thumbnail": "https://img.youtube.com/vi/wQtVSNmYCNg/hqdefault.jpg",
-      "views": 4156835,
+      "views": 4156836,
       "uploadedAt": "2024-03-12T12:00:00Z"
     }
   ],
@@ -318,16 +318,6 @@
       "userId": "google-oauth2|116448144598351732140"
     },
     {
-      "id": "96c8",
-      "videoId": "1",
-      "userId": "google-oauth2|116448144598351732140"
-    },
-    {
-      "id": "4543",
-      "videoId": "3",
-      "userId": "google-oauth2|116448144598351732140"
-    },
-    {
       "id": "f64b",
       "videoId": "20",
       "userId": "google-oauth2|116448144598351732140"
@@ -388,6 +378,11 @@
       "id": "0a3c",
       "videoId": "20",
       "userId": "google-oauth2|116448144598351732140"
+    },
+    {
+      "videoId": "3",
+      "userId": "google-oauth2|116448144598351732140",
+      "id": "sg8YBKU"
     }
   ]
 }
