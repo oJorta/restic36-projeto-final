@@ -106,6 +106,7 @@ export class WatchVideoComponent {
           if (!isInteracted) {
             if (user.sub) {
               this.userService.addInteraction(this.currentVideo.id, user.sub, interactionType).subscribe(() => {
+                this.notificationService.showMessage('Interação adicionada com sucesso!');
                 if (interactionType === 'likes') {
                   this.isLiked = true;
                   this.likes++;
@@ -118,6 +119,7 @@ export class WatchVideoComponent {
             }
           } else {
             this.userService.removeInteraction(isInteracted.id, interactionType).subscribe(() => {
+              this.notificationService.showMessage('Interação removida com sucesso!');
               if (interactionType === 'likes') {
                 this.isLiked = false;
                 this.likes--;
