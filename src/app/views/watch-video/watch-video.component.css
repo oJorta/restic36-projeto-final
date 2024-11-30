@@ -53,8 +53,9 @@ iframe {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
   flex-wrap: wrap;
+  flex: 1;
 }
 
 .option {
@@ -62,6 +63,14 @@ iframe {
   align-items: center;
   gap: .5rem;
   cursor: pointer;
+  padding: .5rem 1rem;
+  background-color: var(--zinc-bg-color);
+  border-radius: 8px;
+  transition: .2s;
+}
+
+.option:hover {
+  color: var(--purple-primary-color);
 }
 
 .description {

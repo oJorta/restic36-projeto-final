@@ -15,17 +15,35 @@
         <div class="options-container">
           <p
             class="option"
-            (click)="toggleVideoLike()"
+            (click)="toggleInteraction('likes')"
           >
-            <img src="../../../assets/icons/not-liked.svg" alt="">
+            @if (isLiked) {
+              <img src="../../../assets/icons/liked.svg" alt="">
+            } @else {
+              <img src="../../../assets/icons/not-liked.svg" alt="">
+            }
             {{ likes }}
           </p>
-          <p class="option">
-            <img src="../../../assets/icons/not-favorite.svg" alt="">
+          <p
+            class="option"
+            (click)="toggleInteraction('favorites')"
+          >
+            @if (isFavorited) {
+              <img src="../../../assets/icons/favorite.svg" alt="">
+            } @else {
+              <img src="../../../assets/icons/not-favorite.svg" alt="">
+            }
             Favoritar
           </p>
-          <p class="option">
-            <img src="../../../assets/icons/not-watch-later.svg" alt="">
+          <p
+            class="option"
+            (click)="toggleInteraction('watchLater')"
+          >
+            @if (isWatchLater) {
+              <img src="../../../assets/icons/watch-later.svg" alt="">
+            } @else {
+              <img src="../../../assets/icons/not-watch-later.svg" alt="">
+            }
             Assistir depois
           </p>
           <p class="option">

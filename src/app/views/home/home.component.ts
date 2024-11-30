@@ -49,12 +49,16 @@ export class HomeComponent {
       this.userService.getFavorites(this.userId).subscribe(favorites => {
         if (favorites.length > 0) {
           this.filteredVideos = favorites.map(fv => fv.video).filter((video) => video !== undefined) || [];
+        } else {
+          this.filteredVideos = [];
         }
       })
     } else if (category === 'assistir-depois') {
       this.userService.getWatchLater(this.userId).subscribe(watchLater => {
         if (watchLater.length > 0) {
           this.filteredVideos = watchLater.map(wl => wl.video).filter((video) => video !== undefined) || [];
+        } else {
+          this.filteredVideos = [];
         }
       })
     }

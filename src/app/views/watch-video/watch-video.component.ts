@@ -3,11 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { VideoService } from '../../services/video/video.service';
+import { UserService } from '../../services/user/user.service';
 import { AuthService } from '../../services/auth/auth.service';
 
 import { Video, VideoInteraction } from '../../types/models';
 
 import { VideoCardComponent } from "../../components/video-card/video-card.component";
+import { User } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-watch-video',
@@ -21,10 +23,14 @@ export class WatchVideoComponent {
   videos: Video[] = [];
   likes: number = 0;
   safeVideoUrl!: SafeResourceUrl;
+  isLiked!: boolean;
+  isFavorited!: boolean;
+  isWatchLater!: boolean;
 
   constructor(
     private videoService: VideoService,
     private authService: AuthService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer
   ) {}
@@ -42,15 +48,34 @@ export class WatchVideoComponent {
       const url = this.currentVideo.url.replace('watch?v=', 'embed/');
       this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
 
-      this.videoService.incrementViews(videoId, this.currentVideo.views).subscribe(() => this.loadVideos());
-      this.currentVideo.views++;
+      this.videoService.incrementViews(videoId, this.currentVideo.views).subscribe(() => {
+        this.loadMoreVideos();
+        this.currentVideo.views++;
+      });
+
+      this.videoService.getInteractionsByVideoId(videoId, 'likes').subscribe(likes => this.likes = likes.length);
+
+      this.authService.getUser().subscribe(user => {
+        const userId = user?.sub;
+
+        this.videoService.getInteractionsByVideoId(videoId, 'likes').subscribe(interactions => {
+          this.isLiked = interactions.some(interaction => interaction.userId === userId);
+        });
+
+        this.videoService.getInteractionsByVideoId(videoId, 'favorites').subscribe(interactions => {
+          this.isFavorited = interactions.some(interaction => interaction.userId === userId);
+        });
+
+        this.videoService.getInteractionsByVideoId(videoId, 'watchLater').subscribe(interactions => {
+          this.isWatchLater = interactions.some(interaction => interaction.userId === userId);
+        });
+      });
     });
-    this.videoService.getLikesByVideoId(videoId).subscribe(likes => this.likes = likes.length);
   }
 
-  loadVideos() {
+  loadMoreVideos() {
     return this.videoService.getVideos().subscribe(videos => {
-      this.videos = this.shuffleVideos(videos);
+      this.videos = this.shuffleVideos(videos).slice(0, 10);
     });
   }
 
@@ -62,21 +87,35 @@ export class WatchVideoComponent {
     return videos
   }
 
-  toggleVideoLike() {
+  toggleInteraction(interactionType: 'likes' | 'favorites' | 'watchLater') {
     this.authService.getUser().subscribe(user => {
       if (user) {
-        this.videoService.getLikesByVideoId(this.currentVideo.id).subscribe(likes => {
-          const isLiked: VideoInteraction | undefined = likes.find(like => like.userId === user.sub);
+        this.videoService.getInteractionsByVideoId(this.currentVideo.id, interactionType).subscribe(interactions => {
+          const isInteracted: VideoInteraction | undefined = interactions.find(interaction => interaction.userId === user.sub);
 
-          if (!isLiked) {
+          if (!isInteracted) {
             if (user.sub) {
-              this.videoService.addLike(this.currentVideo.id, user.sub).subscribe(() => {
-                this.likes++;
+              this.userService.addInteraction(this.currentVideo.id, user.sub, interactionType).subscribe(() => {
+                if (interactionType === 'likes') {
+                  this.isLiked = true;
+                  this.likes++;
+                } else if (interactionType === 'favorites') {
+                  this.isFavorited = true;
+                } else if (interactionType === 'watchLater') {
+                  this.isWatchLater = true;
+                }
               });
             }
           } else {
-            this.videoService.removeLike(isLiked.id).subscribe(() => {
-              this.likes--;
+            this.userService.removeInteraction(isInteracted.id, interactionType).subscribe(() => {
+              if (interactionType === 'likes') {
+                this.isLiked = false;
+                this.likes--;
+              } else if (interactionType === 'favorites') {
+                this.isFavorited = false;
+              } else if (interactionType === 'watchLater') {
+                this.isWatchLater = false;
+              }
             });
           }
         });

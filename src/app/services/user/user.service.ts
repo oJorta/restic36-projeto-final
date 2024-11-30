@@ -22,29 +22,19 @@ export class UserService {
     return this.http.post<User>(`${this.apiUrl}/users`, user);
   }
 
+  addInteraction(videoId: number, userId: string, interactionType: 'likes' | 'favorites' | 'watchLater') {
+    return this.http.post<VideoInteraction>(`${this.apiUrl}/${interactionType}`, { videoId, userId });
+  }
+
+  removeInteraction(interactionId: string, interactionType: 'likes' | 'favorites' | 'watchLater') {
+    return this.http.delete(`${this.apiUrl}/${interactionType}/${interactionId}`);
+  }
+
   getFavorites(userId: string) {
     return this.http.get<VideoInteraction[]>(`${this.apiUrl}/favorites?userId=${userId}&_embed=video`);
   }
 
-  addFavorite(userId: string, videoId: number) {
-    return this.http.post<void>(`${this.apiUrl}/favorites`, { userId, videoId });
-  }
-
-  removeFavorite(userId: string, videoId: number) {
-    const url = `${this.apiUrl}/favorites?userId=${userId}&videoId=${videoId}`;
-    return this.http.delete<void>(url);
-  }
-
   getWatchLater(userId: string) {
     return this.http.get<VideoInteraction[]>(`${this.apiUrl}/watchLater?userId=${userId}&_embed=video`);
-  }
-
-  addToWatchLater(userId: string, videoId: number) {
-    return this.http.post<void>(`${this.apiUrl}/watchLater`, { userId, videoId });
-  }
-
-  removeFromWatchLater(userId: string, videoId: number) {
-    const url = `${this.apiUrl}/watchLater?userId=${userId}&videoId=${videoId}`;
-    return this.http.delete<void>(url);
   }
 }

@@ -26,17 +26,21 @@
   </div>
 
   <div class="videos-container">
-    @for (video of filteredVideos; track video.id) {
-      <app-video-card
-        [id]="video.id"
-        [title]="video.title"
-        [description]="video.description"
-        [url]="video.url"
-        [thumbnail]="video.thumbnail"
-        [views]="video.views"
-        [uploadedAt]="video.uploadedAt"
-      >
-      </app-video-card>
+    @if (filteredVideos.length === 0) {
+      <p class="no-videos-message">Nenhum vídeo encontrado.</p>
+    } @else {
+      @for (video of filteredVideos; track video.id) {
+        <app-video-card
+          [id]="video.id"
+          [title]="video.title"
+          [description]="video.description"
+          [url]="video.url"
+          [thumbnail]="video.thumbnail"
+          [views]="video.views"
+          [uploadedAt]="video.uploadedAt"
+        >
+        </app-video-card>
+      }
     }
   </div>
 </div>

@@ -6,32 +6,23 @@ import { Video, VideoInteraction } from '../../types/models';
   providedIn: 'root'
 })
 export class VideoService {
-  private videosApiUrl = 'http://localhost:3000/videos';
-  private likesApiUrl = 'http://localhost:3000/likes';
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
-  getVideoById(videoId: number) {
-    return this.http.get<Video>(`${this.videosApiUrl}/${videoId}`);
-  }
-
   getVideos() {
-    return this.http.get<Video[]>(this.videosApiUrl);
+    return this.http.get<Video[]>(`${this.apiUrl}/videos`);
   }
 
-  getLikesByVideoId(videoId: number) {
-    return this.http.get<VideoInteraction[]>(`${this.likesApiUrl}?videoId=${videoId}`);
+  getVideoById(videoId: number) {
+    return this.http.get<Video>(`${this.apiUrl}/videos/${videoId}`);
   }
 
-  addLike(videoId: number, userId: string) {
-    return this.http.post<VideoInteraction>(`${this.likesApiUrl}`, { videoId, userId });
-  }
-
-  removeLike(likeId: string) {
-    return this.http.delete(`${this.likesApiUrl}/${likeId}`);
+  getInteractionsByVideoId(videoId: number, interactionType: 'likes' | 'favorites' | 'watchLater') {
+    return this.http.get<VideoInteraction[]>(`${this.apiUrl}/${interactionType}?videoId=${videoId}`);
   }
 
   incrementViews(videoId: number, currentViews: number) {
-    return this.http.patch(`${this.videosApiUrl}/${videoId}`, { views: currentViews + 1 });
+    return this.http.patch(`${this.apiUrl}/videos/${videoId}`, { views: currentViews + 1 });
   }
 }
