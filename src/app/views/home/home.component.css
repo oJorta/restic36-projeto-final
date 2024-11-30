@@ -71,3 +71,37 @@
   font-weight: 500;
   color: var(--zinc-secundary-text-color);
 }
+
+@media screen and (max-width: 768px) {
+  .greeting {
+    font-size: 1.5rem;
+  }
+
+  .category-option {
+    font-size: 1rem;
+  }
+
+  .category-option.selected {
+    padding: 10px 16px;
+  }
+
+}
+
+@media screen and (max-width: 670px) {
+  .filter-options-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .category-selector-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .category-option {
+    text-wrap: nowrap;
+  }
+
+
+}

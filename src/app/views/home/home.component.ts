@@ -21,6 +21,7 @@ export class HomeComponent {
   filteredVideos: Video[] = [];
   sortBy: SortByField = 'views';
   sortOrder: SortOrder = 'desc';
+  userName: string = 'Usuário';
   userId!: string;
 
   constructor(
@@ -32,6 +33,7 @@ export class HomeComponent {
   ngOnInit() {
     this.loadVideos();
     this.auth.getUser().subscribe(user => {
+      this.userName = (user?.name)?.split(' ')[0] || 'Usuário';
       this.userId = user?.sub || '';
     });
   }

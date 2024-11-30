@@ -6,6 +6,8 @@ button {
   cursor: pointer;
   background: none;
   transition: 0.2s;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 button:hover {
@@ -14,8 +16,6 @@ button:hover {
 
 .primary {
   gap: .5rem;
-  font-size: 16px;
-  font-weight: 500;
   background-color: var(--purple-primary-color);
   border-radius: 8px;
   padding: 8px 20px;
@@ -26,7 +26,15 @@ button:hover {
 }
 
 .default {
-  font-size: 16px;
-  font-weight: 500;
   color: var(--zinc-main-text-color);
 }
+
+@media screen and (max-width: 670px) {
+  button {
+    font-size: 14px;
+  }
+
+  .primary {
+    padding: 4px 12px;
+  }
+ }

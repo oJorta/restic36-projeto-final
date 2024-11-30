@@ -1,7 +1,6 @@
 :host {
   width: 100%;
   max-width: 720px;
-  padding: 0 1rem;
 }
 
 .search-bar {
@@ -25,3 +24,13 @@
   color: #ffffff;
   font-size: 16px;
 }
+
+@media screen and (max-width: 670px) {
+  .search-bar {
+    padding: 8px 16px;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+  }
+ }

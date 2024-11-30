@@ -32,5 +32,16 @@
   gap: 1rem;
 }
 
+@media screen and (max-width: 670px) {
+  .search-result-header {
+    font-size: 1.3rem;
+  }
+
+  .videos-container {
+    align-items: center;
+  }
+
+}
+
 
 

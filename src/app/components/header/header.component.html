@@ -1,5 +1,8 @@
 <div class="header-main-content">
-  <a [routerLink]="['/home']">
+  <a
+    class="logo"
+    [routerLink]="['/home']"
+  >
     <img src="../../../assets/icons/logo.svg" alt="Logo do Restic36 Vídeos">
   </a>
 
@@ -11,7 +14,7 @@
     <div class="logged-user-container">
       <div class="profile-container">
         <img
-          [src]="profile.picture"
+          [src]="profile.picture || '../../../assets/images/user-placeholder.png'"
           alt="Foto de perfil do usuário"
           class="profile-picture"
         >

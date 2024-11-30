@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VideoService } from '../../services/video/video.service';
 
@@ -18,17 +18,25 @@ export class SearchVideoComponent {
   query!: string;
   sortBy: SortByField = 'views';
   sortOrder: SortOrder = 'desc';
+  videoCardSize: 'lg' | 'md' = 'lg';
 
   constructor(
     private route: ActivatedRoute,
     private videoService: VideoService
-  ) {}
+  ) {
+    this.videoCardSize = window.innerWidth < 670 ? 'md' : 'lg';
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.query = params['q'] || '';
       this.searchVideos();
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.videoCardSize = event.target.innerWidth < 670 ? 'md' : 'lg';
   }
 
   searchVideos() {

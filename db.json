@@ -32,7 +32,7 @@
       "description": "The official video for “Never Gonna Give You Up” by Rick Astley",
       "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
-      "views": 1200000002,
+      "views": 1200000003,
       "uploadedAt": "2009-10-25T07:57:33Z"
     },
     {
@@ -68,7 +68,7 @@
       "description": "A clip from Buck Privates from my VHS Tapes file. I do not own the rights, but love the movie.",
       "url": "https://www.youtube.com/watch?v=8of3uhG1tCI",
       "thumbnail": "https://i.ytimg.com/vi/8of3uhG1tCI/hqdefault.jpg",
-      "views": 18263728,
+      "views": 18263795,
       "uploadedAt": "2015-01-13T12:00:00Z"
     },
     {
@@ -77,7 +77,7 @@
       "description": "Videoclipe oficial de 'Hey Jude' dos The Beatles.",
       "url": "https://www.youtube.com/watch?v=A_MjCqQoLLA",
       "thumbnail": "https://i.ytimg.com/vi/A_MjCqQoLLA/hqdefault.jpg",
-      "views": 250000000,
+      "views": 250000003,
       "uploadedAt": "2015-10-02T00:00:00Z"
     },
     {
@@ -95,7 +95,7 @@
       "description": "Videoclipe oficial de 'Bohemian Rhapsody' de Queen.",
       "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
       "thumbnail": "https://i.ytimg.com/vi/fJ9rUzIMcZQ/hqdefault.jpg",
-      "views": 1500000006,
+      "views": 1500000008,
       "uploadedAt": "2008-08-01T00:00:00Z"
     },
     {
@@ -194,7 +194,7 @@
       "description": "Áudio oficial de 'Dream On' do Aerosmith.",
       "url": "https://www.youtube.com/watch?v=89dGC8de0CA",
       "thumbnail": "https://i.ytimg.com/vi/89dGC8de0CA/hqdefault.jpg",
-      "views": 200000071,
+      "views": 200000072,
       "uploadedAt": "2013-10-10T12:00:00Z"
     },
     {
@@ -221,7 +221,7 @@
       "description": "Descubra como criar interfaces modernas e funcionais utilizando o Figma, uma das ferramentas mais populares entre designers.",
       "url": "https://www.youtube.com/watch?v=FTFaQWZBqQ8",
       "thumbnail": "https://img.youtube.com/vi/FTFaQWZBqQ8/hqdefault.jpg",
-      "views": 900000006,
+      "views": 900000007,
       "uploadedAt": "2009-06-16T12:00:00Z"
     },
     {
@@ -230,7 +230,7 @@
       "description": "sympton of life music video by willow smith.",
       "url": "https://www.youtube.com/watch?v=wQtVSNmYCNg",
       "thumbnail": "https://img.youtube.com/vi/wQtVSNmYCNg/hqdefault.jpg",
-      "views": 4156836,
+      "views": 4156847,
       "uploadedAt": "2024-03-12T12:00:00Z"
     }
   ],
@@ -299,6 +299,16 @@
       "id": "8c96",
       "videoId": "20",
       "userId": "google-oauth2|116448144598351732140"
+    },
+    {
+      "videoId": "9",
+      "userId": "google-oauth2|116448144598351732140",
+      "id": "ivckMpk"
+    },
+    {
+      "videoId": "6",
+      "userId": "google-oauth2|116448144598351732140",
+      "id": "zqoIK-l"
     }
   ],
   "watchLater": [
@@ -321,6 +331,16 @@
       "id": "f64b",
       "videoId": "20",
       "userId": "google-oauth2|116448144598351732140"
+    },
+    {
+      "videoId": "9",
+      "userId": "google-oauth2|116448144598351732140",
+      "id": "KOwWxrA"
+    },
+    {
+      "videoId": "24",
+      "userId": "google-oauth2|116448144598351732140",
+      "id": "NbIGVAx"
     }
   ],
   "favorites": [
@@ -378,6 +398,16 @@
       "id": "0a3c",
       "videoId": "20",
       "userId": "google-oauth2|116448144598351732140"
+    },
+    {
+      "videoId": "9",
+      "userId": "google-oauth2|116448144598351732140",
+      "id": "6Zv3AMr"
+    },
+    {
+      "videoId": "6",
+      "userId": "google-oauth2|116448144598351732140",
+      "id": "iO4YJY7"
     }
   ]
 }
