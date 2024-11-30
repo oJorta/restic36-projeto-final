@@ -1,24 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { VideoService } from '../../services/video/video.service';
 import { UserService } from '../../services/user/user.service';
 import { AuthService } from '../../services/auth/auth.service';
+import { NotificationService } from '../../services/notification/notification.service';
 
 import { Video, VideoInteraction } from '../../types/models';
 
 import { VideoCardComponent } from "../../components/video-card/video-card.component";
 import { User } from '@auth0/auth0-angular';
+import { ToastComponent } from '../../components/toast/toast.component';
 
 @Component({
   selector: 'app-watch-video',
   standalone: true,
-  imports: [VideoCardComponent, DatePipe],
+  imports: [VideoCardComponent, DatePipe, ToastComponent],
   templateUrl: './watch-video.component.html',
   styleUrl: './watch-video.component.css'
 })
 export class WatchVideoComponent {
+  @ViewChild(ToastComponent) toast!: ToastComponent;
   currentVideo!: Video;
   videos: Video[] = [];
   likes: number = 0;
@@ -31,6 +34,7 @@ export class WatchVideoComponent {
     private videoService: VideoService,
     private authService: AuthService,
     private userService: UserService,
+    private notificationService: NotificationService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer
   ) {}
@@ -40,6 +44,10 @@ export class WatchVideoComponent {
       const videoId = params['id'];
       this.loadVideo(videoId);
     });
+  }
+
+  ngAfterViewInit() {
+    this.notificationService.registerToastComponent(this.toast);
   }
 
   loadVideo(videoId: number) {
@@ -89,7 +97,9 @@ export class WatchVideoComponent {
 
   toggleInteraction(interactionType: 'likes' | 'favorites' | 'watchLater') {
     this.authService.getUser().subscribe(user => {
-      if (user) {
+      if (!user) {
+        this.notificationService.showMessage('Você precisa estar logado para interagir com o vídeo.');
+      } else {
         this.videoService.getInteractionsByVideoId(this.currentVideo.id, interactionType).subscribe(interactions => {
           const isInteracted: VideoInteraction | undefined = interactions.find(interaction => interaction.userId === user.sub);
 

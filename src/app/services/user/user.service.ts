@@ -8,7 +8,9 @@ import { VideoInteraction, User, Video } from '../../types/models';
 export class UserService {
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getUserById(id: string) {
     return this.http.get<User[]>(`${this.apiUrl}/users?id=${id}`);
