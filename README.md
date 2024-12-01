@@ -1,27 +1,95 @@
-# Restic36ProjetoFinal
+# 📺 RESTIC36 - Streaming de Vídeo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+Site de Streaming de Vídeo desenvolvido em [Angular](https://github.com/angular/angular-cli) como forma de avaliação final da Trilha de Desenvolvimento Front-End da RESTIC36.
+## 🎨 Protótipo de Design
 
-## Development server
+O Protótipo foi desenvolvido em Figma e pode ser acessado a partir [desse link](https://www.figma.com/design/zKPbhzN8hS5bKsGsbjAXYt/RESTIC36---Projeto-Final?node-id=0-1&t=orP4FqXPnUpyCHbE-1).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## 💻 Demonstração
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Captura de tela](src\assets\images\captura-de-tela.jpeg)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🔍 Funcionalidades
 
-## Running unit tests
+- **Autenticação**: Login e logout utilizando Auth0.
+- **Visualização de Vídeos**: Exibição de vídeos populares, favoritos e para assistir mais tarde.
+- **Interações com Vídeos**: Curtir, favoritar e adicionar vídeos à lista de "assistir mais tarde".
+- **Busca de Vídeos**: Busca de vídeos por título, data e visualizações.
+- **Ordenação de Vídeos**: Ordenação de vídeos por título, data e visualizações.
+- **Compartilhamento de Vídeos**: Copiar URL do vídeo para a área de transferência.
+- **Notificações**: Exibição de mensagens de notificação.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Aspectos Técnicos
 
-## Running end-to-end tests
+### Arquitetura
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+O sistema é dividido em várias camadas para melhor organização e manutenção do código:
 
-## Further help
+- **Serviços (Services)**: Responsáveis por fazer a comunicação com APIs externas e gerenciar dados da aplicação.
+- **Componentes (Components)**: Blocos reutilizáveis de UI que compõem as diferentes partes da aplicação.
+- **Views**: Páginas da aplicação que utilizam os componentes para exibir informações ao usuário.
+- **Roteamento (Routing)**: Gerencia a navegação entre as diferentes views da aplicação.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Tecnologias Utilizadas
+
+- **Angular**: Framework principal para desenvolvimento da aplicação.
+- **TypeScript**: Linguagem utilizada para escrever o código da aplicação.
+- **HTML e CSS**: Utilizados para estruturar e estilizar a interface do usuário.
+- **Auth0**: Serviço de autenticação e autorização.
+- **json-server**: Utilizado para simular uma API RESTful durante o desenvolvimento.
+
+### Padrões de Projeto
+
+- **Injeção de Dependência**: Utilizada para gerenciar dependências entre os serviços e componentes.
+- **Observables**: Utilizados para lidar com operações assíncronas e eventos.
+- **Componentização**: Divisão da interface em componentes reutilizáveis para facilitar a manutenção e escalabilidade.
+
+## ❓ Como executar
+
+Para executar o sistema, siga os passos abaixo:
+
+### Pré-requisitos
+
+- Node.js (versão 14 ou superior)
+- Angular CLI (versão 12 ou superior)
+
+### Passos
+
+1. **Clone o repositório:**
+
+  ```bash
+  git clone https://github.com/oJorta/restic36-projeto-final.git
+  cd restic36-projeto-final
+  ```
+
+2. **Instale as dependências:**
+
+  ```bash
+  npm install
+  ```
+
+3. **Execute o servidor de desenvolvimento:**
+
+  ```bash
+  ng serve
+  ```
+
+4. **Inicie o json-server:**
+
+  ```bash
+  npx json-server --watch db.json --port 3000
+  ```
+
+5. **Acesse a aplicação:**
+
+  Abra o navegador e acesse `http://localhost:4200`.
+
+Pronto! Agora você deve conseguir ver e interagir com o sistema de streaming de vídeo e seu backend.
+
+
+## Autores
+
+- [@oJorta](https://www.github.com/ojorta)
+
