@@ -134,4 +134,9 @@ export class WatchVideoComponent {
       }
     })
   }
+
+  copyVideoUrl() {
+    navigator.clipboard.writeText(this.currentVideo.url);
+    this.notificationService.showMessage('Link do vídeo copiado para a sua área de transferência!');
+  }
 }
